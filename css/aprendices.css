@@ -1,0 +1,288 @@
+/* ==========================================================
+   REGISTRO DE APRENDICES  ·  index.html
+   Estilo: ficha de inscripción limpia. Papel gris-azulado,
+   tinta azul marino, campos subrayados y verde SENA.
+   ========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Manrope:wght@400;500;700;800&display=swap');
+
+:root {
+    --tinta: #13233a;
+    --papel: #e8edf2;
+    --blanco: #ffffff;
+    --verde: #39a900;
+    --verde-oscuro: #2a7d00;
+    --verde-tenue: #f1f9ea;
+    --gris: #5d6c7e;
+    --linea: #c4cfdb;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 0 1.25rem 4rem;
+    background: var(--papel);
+    color: var(--tinta);
+    font-family: 'Manrope', system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.55;
+}
+
+/* Todo el contenido comparte el mismo ancho de columna */
+body > * {
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ---------- Navegación ---------- */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 1.5rem 0 0.75rem;
+}
+
+nav a {
+    padding: 0.45rem 1rem;
+    border: 2px solid transparent;
+    border-radius: 999px;
+    color: var(--tinta);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: border-color 0.2s;
+}
+
+nav a:hover {
+    border-color: var(--tinta);
+}
+
+/* Página actual */
+nav a[href="index.html"] {
+    background: var(--tinta);
+    color: var(--blanco);
+}
+
+nav a:focus-visible {
+    outline: 3px solid var(--verde);
+    outline-offset: 2px;
+}
+
+/* ---------- Títulos ---------- */
+h1 {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+    border-left: 10px solid var(--verde);
+    font-family: 'Bricolage Grotesque', 'Manrope', sans-serif;
+    font-size: clamp(2rem, 7vw, 3.25rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-family: 'Bricolage Grotesque', 'Manrope', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* ---------- Formulario ---------- */
+form {
+    padding: 2rem;
+    background: var(--blanco);
+    border-top: 6px solid var(--verde);
+    border-radius: 4px;
+    box-shadow: 0 1px 0 var(--linea), 0 18px 32px -22px rgba(19, 35, 58, 0.45);
+}
+
+/* El HTML usa <br> para separar: aquí lo reemplaza el espaciado */
+form br {
+    display: none;
+}
+
+label {
+    display: block;
+    margin-top: 1.4rem;
+    margin-bottom: 0.1rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+form > label:first-child {
+    margin-top: 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+input[type="date"],
+select {
+    display: block;
+    width: 100%;
+    padding: 0.6rem 0.25rem;
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid var(--linea);
+    border-radius: 0;
+    color: var(--tinta);
+    font: inherit;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="number"]:hover,
+input[type="tel"]:hover,
+input[type="date"]:hover,
+select:hover {
+    border-bottom-color: var(--gris);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+select:focus {
+    outline: none;
+    background: var(--verde-tenue);
+    border-bottom-color: var(--verde);
+    box-shadow: 0 2px 0 var(--verde);
+}
+
+/* Radios y checkbox */
+input[type="radio"],
+input[type="checkbox"] {
+    width: 1.1rem;
+    height: 1.1rem;
+    margin: 0 0.4rem 0 1.25rem;
+    vertical-align: middle;
+    accent-color: var(--verde);
+}
+
+label + input[type="radio"] {
+    margin-left: 0;
+}
+
+input[type="radio"]:focus-visible,
+input[type="checkbox"]:focus-visible {
+    outline: 3px solid var(--verde);
+    outline-offset: 2px;
+}
+
+/* Etiqueta que envuelve el checkbox de aceptación */
+label:has(input[type="checkbox"]) {
+    display: flex;
+    align-items: center;
+    margin-top: 1.75rem;
+    font-weight: 500;
+}
+
+label:has(input[type="checkbox"]) input {
+    margin: 0 0.6rem 0 0;
+}
+
+/* ---------- Botón ---------- */
+button {
+    display: block;
+    width: 100%;
+    margin-top: 2rem;
+    padding: 0.9rem 1.6rem;
+    background: var(--verde);
+    border: 0;
+    border-radius: 4px;
+    color: var(--tinta);
+    font: inherit;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+button:hover {
+    background: var(--tinta);
+    color: var(--blanco);
+}
+
+button:focus-visible {
+    outline: 3px solid var(--tinta);
+    outline-offset: 3px;
+}
+
+/* ---------- Resultado ---------- */
+hr {
+    height: 1px;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    background: var(--linea);
+    border: 0;
+}
+
+#resultado {
+    min-height: 4rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--blanco);
+    border-left: 6px solid var(--verde);
+    border-radius: 0 4px 4px 0;
+    overflow-wrap: anywhere;
+}
+
+#resultado:empty {
+    background: transparent;
+    border: 2px dashed var(--linea);
+    border-radius: 4px;
+}
+
+#resultado:empty::before {
+    content: "Aquí aparecerán los datos del aprendiz registrado.";
+    color: var(--gris);
+}
+
+#resultado p {
+    margin: 0.35rem 0;
+}
+
+#resultado strong {
+    color: var(--verde-oscuro);
+}
+
+#resultado ul {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+#resultado table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#resultado th,
+#resultado td {
+    padding: 0.5rem 0.25rem;
+    border: 0;
+    border-bottom: 1px solid var(--linea);
+    text-align: left;
+}
+
+/* ---------- Móvil ---------- */
+@media (max-width: 480px) {
+    form {
+        padding: 1.5rem 1.25rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
+}
